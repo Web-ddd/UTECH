@@ -1,0 +1,404 @@
+@font-face {
+    font-family: neon;
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+/*---------------------------------------------------------
+*
+*
+*
+*----------------------------------------------------------*/
+
+/*---------------------[General]--------------------------*/
+* {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #2c3338;
+    color: #606468;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    height: 100%;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 100%;
+
+}
+
+.loaders{
+    position: absolute;
+    left: 45%;
+    top: 42%;
+    width: 5em;
+    height: 5em;
+}
+.login-wrap {
+    height: 100vh;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/*[ login page background slider  ]*/
+
+
+/*[ login Panel  ]*/
+
+.align {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    top: 31%;
+    left: 40%;
+    width: 20%;
+}
+.grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+    max-width: 20rem;
+    width: 90%;
+}
+
+/* helpers/hidden.css */
+
+.hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/* helpers/icon.css */
+
+.icons {
+    display: none;
+}
+
+.icon {
+    display: inline-block;
+    fill: #606468;
+    font-size: 16px;
+    font-size: 1rem;
+    height: 1em;
+    vertical-align: middle;
+    width: 1em;
+}
+
+
+/* modules/form.css */
+.text--center {
+    text-align: center;
+}
+
+/*[ material design form ]*/
+
+.material {
+    direction: rtl;
+    width: 380px;
+    margin: 4em auto;
+    padding: 3em 2em 2em 2em;
+    background: rgba(180, 199, 202, 0.46);
+    border: 1px solid rgba(180, 199, 202, 0.46);;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+    margin-bottom: 100px;
+}
+
+.material .group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.material input {
+    font-size: 18px;
+    font-family: "Cocon-dn-font","Saied-dn-font";
+    padding: 10px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: transparent;
+    color: #ffffff;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ffffff;
+}
+
+.material input:focus { outline: none; }
+
+
+/* Label */
+
+.material label {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    right: 5px;
+    top: 10px;
+    -webkit-transition:all 0.2s ease;
+    transition: all 0.2s ease;
+    text-align: right;
+    font-family: "Saied-dn-font";
+}
+
+
+/* active */
+
+.material input:focus ~ label,.material input.used ~ label {
+    top: -20px;
+    -webkit-transform: scale(.75);
+    transform: scale(.75);
+    right: -2px;
+    /* font-size: 14px; */
+    color: #ffffff;
+
+}
+.material .register{  text-shadow: none !important;  }
+.material .register a {  color:  #4a89dc;}
+
+/* Underline */
+
+.material .bar {
+    display: block;
+    width: 100%;
+
+}
+
+.material .bar:before,.material .bar:after {
+    content: '';
+    height: 3px;
+    width: 0;
+    bottom: 0px;
+    position: absolute;
+    background: #4a89dc;
+    -webkit-transition:all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.material .bar:before { left: 50%; }
+
+.material .bar:after { right: 50%; }
+
+
+/* active */
+
+.material input:focus ~ .bar:before, .material input:focus ~ .bar:after { width: 50%; }
+
+
+/* Highlight */
+
+.material .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    right: 0;
+    pointer-events: none;
+    opacity: 0.5;
+
+    background: transparent !important;
+}
+
+
+/* active */
+
+.material input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+
+/* Animations */
+
+@-webkit-keyframes inputHighlighter {
+    from { background: #4a89dc; }
+    to 	{ width: 0; background: transparent; }
+}
+
+@keyframes inputHighlighter {
+    from { background: #4a89dc; }
+    to 	{ width: 0; background: transparent; }
+}
+
+
+/* Button */
+
+.material .button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    margin: .3em 0 1em 0;
+    width: 100%;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #3160B6;
+    cursor: pointer;
+    -webkit-transition:all 0.15s ease;
+    transition: all 0.15s ease;
+}
+.material .button:focus { outline: 0; }
+
+
+/* Button modifiers */
+
+.material .buttonBlue {
+    background: #4a89dc;
+    text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+.material .buttonBlue:hover { background: #357bd8; }
+
+
+/* Ripples container */
+
+.material .ripples {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: transparent;
+}
+
+
+/* Ripples circle */
+
+.material .ripplesCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.material .ripples.is-active .ripplesCircle {
+    -webkit-animation: ripples .4s ease-in;
+    animation: ripples .4s ease-in;
+}
+
+
+/* Ripples animation */
+
+@-webkit-keyframes ripples {
+    0% { opacity: 0; }
+
+    25% { opacity: 1; }
+
+    100% {
+        width: 200%;
+        padding-bottom: 200%;
+        opacity: 0;
+    }
+}
+
+@keyframes ripples {
+    0% { opacity: 0; }
+
+    25% { opacity: 1; }
+
+    100% {
+        width: 200%;
+        padding-bottom: 200%;
+        opacity: 0;
+    }
+}
+
+
+/* Neon Word */
+
+.utech {  height: 250px}
+.utech .h{ margin-top: 110px; }
+
+.neon {
+    font-family: neon;
+    color: #FB4264;
+    font-size: 9vw;
+    line-height: 9vw;
+    text-shadow: 0 0 3vw #F40A35;
+}
+
+.flux {
+    font-family: neon;
+    color: #426DFB;
+    font-size: 9vw;
+    line-height: 9vw;
+    text-shadow: 0 0 3vw #2356FF;
+}
+
+.neon {
+    animation: neon 1s ease infinite;
+    -moz-animation: neon 1s ease infinite;
+    -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+        color: #FED128;
+    }
+    50% {
+        text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+        color: #806914;
+    }
+}
+
+.flux {
+    animation: flux 2s linear infinite;
+    -moz-animation: flux 2s linear infinite;
+    -webkit-animation: flux 2s linear infinite;
+    -o-animation: flux 2s linear infinite;
+}
+
+@keyframes flux {
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+        color: #28D7FE;
+    }
+    50% {
+        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+        color: #146C80;
+    }
+}
