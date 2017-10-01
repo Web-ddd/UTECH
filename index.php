@@ -379,7 +379,7 @@
                                 <p >
                                      تصاميمنا جذابة و متوافقة مع جميع الاجهزة احترافية في اختيار الالونن ...
                                 </p>
-                                <a style="margin-top: 35px;">اقرأ اكثر ...</a>
+                                <a>اقرأ اكثر ...</a>
                             </div>
                         </div>
                         <div class='product--orange  wow slideInUp intro" data-wow-duration="1.2s" data-wow-delay="0s"'>
